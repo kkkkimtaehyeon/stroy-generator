@@ -1,11 +1,9 @@
-from schemas import ChildrenInfo
-#from models import ChildInfo
-from db import children_info_collection 
+from schemas import ChildrenInfo, StorySource
+from db import children_info_collection, story_source_collection
 from bson import ObjectId
 
-#child info
-async def create_child_info(children_info: ChildrenInfo):
-    #child_info = ChildInfo(child_info_schema)
+#child_info
+def create_child_info(children_info: ChildrenInfo):
     children_info_collection.insert_one(dict(children_info))
 
 def read_child_info(id: str):
@@ -36,3 +34,8 @@ def delete_child_info(id: str):
         return {"status": 200}
     except Exception as e:
         print("child info delete failed", e)
+
+
+#story_source
+def create_story_source(story_source: StorySource):
+    story_source_collection.insert_one(dict(story_source))

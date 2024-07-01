@@ -9,6 +9,6 @@ client = MongoClient(MONGODB_URL)
 db = client.story_generator_db
 
 children_info_collection = db['child_info_collection']
-prompt_collection = db['prompt_collection']
+story_source_collection = db['story_source_collection']
 
 
