@@ -1,13 +1,18 @@
 from fastapi import APIRouter
 from schemas import ChildrenInfo
-from crud import create_child_info, read_child_info, update_child_info, delete_child_info
+from crud import  get_all_children_infos, get_child_info, create_child_info,update_child_info, delete_child_info
 import time
 
 router = APIRouter(tags=['children'])
 
+
+@router.get("/children")
+async def fetch_all_children_infos():
+    return get_all_children_infos()
+
 @router.get("/children/{id}")
 async def fetch_child_info(id: str):
-    return read_child_info(id)
+    return get_child_info(id)
 
 @router.post("/children")
 async def post_child_info(children_info: ChildrenInfo):
