@@ -11,7 +11,7 @@ async def fetch_child_info(id: str):
 
 @router.post("/children")
 async def post_child_info(children_info: ChildrenInfo):
-    await create_child_info(children_info)
+    create_child_info(children_info)
 
 @router.patch("/children/{id}")
 async def edit_child_info(id: str, children_info: ChildrenInfo):
