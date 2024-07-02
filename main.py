@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from routes import children, story_source
+from routes import children, story_source, interests
 
 app = FastAPI()
 
@@ -15,6 +15,7 @@ app.add_middleware(
 
 app.include_router(children.router, prefix="/api/infos")
 app.include_router(story_source.router, prefix="/api/stories")
+app.include_router(interests.router, prefix="/api/interests")
 
 
 if __name__ == "__main__":

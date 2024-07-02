@@ -10,3 +10,6 @@ class ChildrenInfo(BaseModel):
 class StorySource(BaseModel):
     prompt: str
     image_urls: Optional[List[str]]
+
+class Interests(BaseModel):
+    interest: str
