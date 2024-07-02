@@ -26,3 +26,7 @@ def upload_image_on_s3(image_file: UploadFile):
 
 def get_object_key(file):
     return str(uuid.uuid4()) + "_" + file.filename
+
+def delete_image_on_s3(key: str):
+    # TODO s3에서 이미지 삭제
+    pass
